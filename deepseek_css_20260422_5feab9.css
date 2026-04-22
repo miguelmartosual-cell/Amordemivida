@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    padding: 40px 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+    font-size: 3rem;
+    color: #c2185b;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(194, 24, 91, 0.2);
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    color: #d81b60;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-size: 1.1rem;
+    color: #880e4f;
+    font-weight: bold;
+}
+
+input {
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #f48fb1;
+    border-radius: 50px;
+    outline: none;
+    text-align: center;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+input:focus {
+    border-color: #c2185b;
+    box-shadow: 0 0 10px rgba(194, 24, 91, 0.3);
+}
+
+button {
+    background: linear-gradient(45deg, #e91e63, #c2185b);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(194, 24, 91, 0.4);
+}
+
+.mensaje {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+/* Mensaje especial para la persona correcta */
+.mensaje.amor {
+    background: linear-gradient(135deg, #ffebee, #fce4ec);
+    color: #880e4f;
+    border-left: 5px solid #e91e63;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: latido 0.5s ease;
+}
+
+/* Mensaje para otros nombres */
+.mensaje.error {
+    background: #f5f5f5;
+    color: #9e9e9e;
+    border-left: 5px solid #ccc;
+}
+
+@keyframes latido {
+    0% { transform: scale(0.95); opacity: 0; }
+    80% { transform: scale(1.02); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Corazones decorativos */
+body::before {
+    content: "❤️";
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    font-size: 50px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+body::after {
+    content: "💖";
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 60px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .card {
+        padding: 25px 20px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .subtitulo {
+        font-size: 1rem;
+    }
+}
